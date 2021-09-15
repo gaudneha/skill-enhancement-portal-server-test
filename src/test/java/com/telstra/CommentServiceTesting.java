@@ -10,7 +10,10 @@ import com.telstra.repository.QuestionRepository;
 import com.telstra.service.*;
 import org.junit.Assert;
 
+// Enable this when testing code in the IDE
 //import org.junit.Test;
+
+// Enable this when you require code coverage in SonarQube
 import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.MethodOrderer;
