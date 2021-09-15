@@ -22,21 +22,28 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.Optional;
 @SpringBootTest
 //@RunWith(SpringRunner.class)
-public class CommentServiceTesting {
+public class CommentServiceTest {
 
     @InjectMocks
+    @Autowired
     private CommentService commentService;
 
     @Mock
+    @Autowired
     QuestionRepository questionRepository;
 
     @Mock
+    @Autowired
     CommentRepository commentRepository;
 
     @Mock
@@ -51,7 +58,7 @@ public class CommentServiceTesting {
     @Mock
     Mapper mapper;
 
-    @Test
+/*    @Test
     public void test1() {
         CommentRequest commentRequest = new CommentRequest();
         commentRequest.setQ_id("Core");
@@ -86,7 +93,7 @@ public class CommentServiceTesting {
         Mockito.when(commentRepository.save(comment)).thenReturn(comment);
         commentService.downVote(1L);
 
-    }
+    }*/
 /*@Test
    public void testSelectComment(){
     Comment comment = new Comment();
@@ -94,6 +101,22 @@ public class CommentServiceTesting {
     Mockito.when(commentRepository.save(comment)).thenReturn(comment);
     Mockito.when(userService.incrementUserPoints(1L, 50L)).thenReturn();
 */
+
+    @Test
+    public void testCommentUpvote(){
+        commentService.upVote(5L);
+        assertEquals(true,true);
+        commentService.downVote(5L);
+    }
+
+    @Test
+    public void testCommentDownvote(){
+        commentService.downVote(4L);
+        assertEquals(true,true);
+        commentService.upVote(4L);
+    }
+
+
 
 
 
