@@ -45,6 +45,12 @@ public class QuestionServiceTest {
     }
 
     @Test
+    public void testGetAllQuestions(){
+        List<QuestionResponse> var = questionService.getQues();
+        assertEquals(var.size(),var.size());
+    }
+
+    @Test
     //@Order(7)
     public void testFindQuestionExists() {
         Question question = questionRepository.findById(2L).get();
