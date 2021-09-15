@@ -7,7 +7,7 @@ import com.telstra.repository.QuestionRepository;
 
 import com.telstra.service.QuestionService;
 import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
+
 
 // Enable this when testing code in the IDE
 //import org.junit.Test;
@@ -15,11 +15,14 @@ import org.junit.jupiter.api.Order;
 // Enable this when you require code coverage in SonarQube
 import org.junit.jupiter.api.Test;
 
+
+
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -54,6 +57,32 @@ public class QuestionServiceTest {
         //Question question = questionRepository.findById(5L).get();
         QuestionResponse res = questionService.getQuesById(5L);
         assertEquals(post_name,res.getPostName());
+    }
+
+    @Test
+    public void testQuestionUpvote(){
+
+        Long id=5L;
+        Optional<Question> question = questionRepository.findById(id);
+        int initial_vote_count = question.get().getUpVoteCount();
+        question.get().setUpVoteCount(question.get().getUpVoteCount() + 1);
+        questionService.upVote(id);
+        assertEquals((initial_vote_count + 1 ),question.get().getUpVoteCount());
+        questionService.downVote(id);
+
+    }
+
+    @Test
+    public void testQuestionDownvote(){
+
+        Long id=4L;
+        Optional<Question> question = questionRepository.findById(id);
+        int initial_vote_count = question.get().getDownVoteCount();
+        question.get().setDownVoteCount(question.get().getDownVoteCount() + 1);
+        questionService.downVote(id);
+        assertEquals((initial_vote_count + 1 ),question.get().getDownVoteCount());
+        questionService.upVote(id);
+
     }
 
 
