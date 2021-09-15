@@ -27,9 +27,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Optional;
 @SpringBootTest
-@RunWith(SpringRunner.class)
-
-public class CommentServiceTest{
+//@RunWith(SpringRunner.class)
+public class CommentServiceTesting {
 
     @InjectMocks
     private CommentService commentService;
@@ -74,14 +73,14 @@ public class CommentServiceTest{
 
     }
     @Test
-    public void testUpVote(){
+    public void testUpVote1(){
         Comment comment = new Comment();
         Mockito.when(commentRepository.findById(1L)).thenReturn(Optional.of(comment));
         Mockito.when(commentRepository.save(comment)).thenReturn(comment);
         commentService.upVote(1L);
     }
     @Test
-    public void testDownVote(){
+    public void testDownVote1(){
         Comment comment = new Comment();
         Mockito.when(commentRepository.findById(1L)).thenReturn(Optional.of(comment));
         Mockito.when(commentRepository.save(comment)).thenReturn(comment);
@@ -95,6 +94,8 @@ public class CommentServiceTest{
     Mockito.when(commentRepository.save(comment)).thenReturn(comment);
     Mockito.when(userService.incrementUserPoints(1L, 50L)).thenReturn();
 */
+
+
 
 }
 
