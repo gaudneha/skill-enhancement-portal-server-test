@@ -5,8 +5,10 @@ import com.telstra.model.Notification;
 import com.telstra.repository.NotificationRepository;
 import com.telstra.service.NotificationService;
 import org.apache.logging.log4j.message.Message;
-import org.junit.Test;
-//import org.junit.jupiter.api.Test;
+
+//import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

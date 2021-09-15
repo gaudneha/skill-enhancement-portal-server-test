@@ -29,7 +29,7 @@
             src/main/java/com/telstra/controller/*,
             src/main/java/com/telstra/security/*,
             src/main/java/com/telstra/SkillEnhancementPortalApplication.java
-            
+
         </sonar.coverage.exclusions>
     </properties>
     <dependencies>

@@ -9,8 +9,10 @@ import com.telstra.repository.CommentRepository;
 import com.telstra.repository.QuestionRepository;
 import com.telstra.service.*;
 import org.junit.Assert;
-import org.junit.Test;
-//import org.junit.jupiter.api.Test;
+
+//import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.runner.RunWith;
