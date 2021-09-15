@@ -43,9 +43,9 @@ public class FollowersServiceTest {
     FollowersService followersService;
 
     @Test
-    public void testGetIfFollowing(){
-        followersService.checkIfFollowing(1L,2L);
-        assertEquals(true,true);
+    public void testCheckIfFollowing(){
+        boolean outcome = followersService.checkIfFollowing(1L,2L);
+        assertEquals(outcome,true);
 
 
     }
