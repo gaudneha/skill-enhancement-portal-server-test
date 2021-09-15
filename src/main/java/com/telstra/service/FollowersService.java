@@ -39,7 +39,7 @@ public class FollowersService {
         return "You are now following " + s_id;
     }
 
-    private boolean checkIfFollowing(Long myId, Long userId) {
+    public boolean checkIfFollowing(Long myId, Long userId) {
         List<Followers> followers = followersRepository.findAll();
         for (Followers s : followers) {
             if (s.getFollowerId().equals(myId) && s.getUserId().equals(userId)) {
