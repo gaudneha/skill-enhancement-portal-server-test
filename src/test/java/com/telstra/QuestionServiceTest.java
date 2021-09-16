@@ -1,6 +1,7 @@
 package com.telstra;
 
 import com.telstra.dto.QuestionResponse;
+import com.telstra.dto.SearchRequest;
 import com.telstra.model.Question;
 
 import com.telstra.repository.QuestionRepository;
@@ -90,6 +91,18 @@ public class QuestionServiceTest {
         questionService.upVote(id);
 
     }
+    //@Autowired
+    //SearchRequest searchRequest;
+
+    @Test
+    public void testSearchQuestion(){
+        SearchRequest sr = new SearchRequest();
+        sr.setText("flutter error");
+        List<Question> outp = questionService.searchQuestion(sr);
+        assertEquals(outp.size(),outp.size());
+    }
+
+
 
 
 }
