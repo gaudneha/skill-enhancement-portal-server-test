@@ -13,6 +13,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>skill-enhancement-portal</name>
     <description>Skill enhancement portal backend</description>
+
+
     <properties>
         <java.version>11</java.version>
         <!-- JaCoCo Properties -->
@@ -21,6 +23,8 @@
         <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
         <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
         <sonar.language>java</sonar.language>
+
+
         <sonar.coverage.exclusions>
             src/main/java/com/telstra/dto/*,
             src/main/java/com/telstra/model/*,
@@ -30,10 +34,12 @@
             src/main/java/com/telstra/security/*,
             src/main/java/com/telstra/service/AuthService.java,
             src/main/java/com/telstra/service/GetterSource.java,
+            src/main/java/com/telstra/service/RefreshTokenService.java,
             src/main/java/com/telstra/SkillEnhancementPortalApplication.java
-
         </sonar.coverage.exclusions>
+
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
