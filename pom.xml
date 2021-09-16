@@ -28,6 +28,8 @@
             src/main/java/com/telstra/exceptions/*,
             src/main/java/com/telstra/controller/*,
             src/main/java/com/telstra/security/*,
+            src/main/java/com/telstra/service/AuthService.java,
+            src/main/java/com/telstra/service/GetterSource.java,
             src/main/java/com/telstra/SkillEnhancementPortalApplication.java
 
         </sonar.coverage.exclusions>
